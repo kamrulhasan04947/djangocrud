@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block  main%}
+<div class="container mt-5">
+    <form action="" method="post" enctype="multipart/form-data" class="col-6 m-auto shadow-lg p-3">
+        {% csrf_token %}
+        <label for="Racipe" class="text-success form-control text-center"><h2>USER LOGIN</h2></label>
+        <hr>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div> 
+            {% endfor %}  
+        {% endif %}
+        <div class="mb-2">
+            <label for="" class="fw-bold">Username</label>
+            <input type="text" , name="username" class="form-control mb-2" required>
+        </div>
+        <div class="">
+            <label for="" class="fw-bold mb-1">Password</label>
+            <input type="password", name="password" class="form-control mb-2" required>
+        </div>
+        <div class="p-1 mb-2">
+            <label for="" class="text-muted">Create account? <a href="/register/"> Register</a></label>
+        </div>
+        <button type="submit" class="btn btn-success form-control"> Submit</button>
+    </form>
+</div>
+{% endblock%}
+    
+
